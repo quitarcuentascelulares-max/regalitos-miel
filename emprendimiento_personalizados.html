@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalitos Miel 🍯 | Regalos Personalizados, Impresión 3D, Papelería y Sublimación</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        honey: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        bee: {
+                            light: '#e0f2fe',
+                            DEFAULT: '#0284c7',
+                            dark: '#0369a1'
+                        },
+                        pastelMint: '#d1fae5',
+                        pastelPink: '#fce7f3'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Playfair Display', 'serif'],
+                        handwriting: ['Fredoka', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .honey-pattern {
+            background-color: #fffbeb;
+            background-image: radial-gradient(#fcd34d 0.8px, transparent 0.8px), radial-gradient(#fcd34d 0.8px, #fffbeb 0.8px);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+        }
+        .hexagon-bg {
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+    </style>
+</head>
+<body class="bg-amber-50/40 text-slate-800 font-sans antialiased selection:bg-honey-200 selection:text-honey-900">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-honey-200/60 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full bg-amber-100 border-2 border-honey-400 flex items-center justify-center text-honey-600 shadow-md group-hover:scale-105 transition-transform">
+                        <span class="text-2xl">🐝</span>
+                    </div>
+                    <div>
+                        <span class="font-handwriting font-bold text-2xl sm:text-3xl text-honey-800 tracking-tight block leading-tight">Regalitos Miel</span>
+                        <span class="text-[11px] uppercase tracking-widest text-honey-600 font-bold block">Personalizados con amor</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-slate-700">
+                    <a href="#inicio" class="hover:text-honey-600 transition-colors">Inicio</a>
+                    <a href="#catalogo" class="hover:text-honey-600 transition-colors">Catálogo</a>
+                    <a href="#cotizador" class="hover:text-honey-600 transition-colors">Presupuesto Online</a>
+                    <a href="#proceso" class="hover:text-honey-600 transition-colors">¿Cómo Pedir?</a>
+                    <a href="#nosotros" class="hover:text-honey-600 transition-colors">Nosotros</a>
+                    <a href="#contacto" class="hover:text-honey-600 transition-colors">Contacto</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="https://www.instagram.com/regalitosmiel" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white p-2.5 rounded-2xl shadow-sm transition-transform hover:scale-105" title="Instagram @regalitosmiel">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20un%20producto%20personalizado." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-2xl font-medium text-sm shadow-md shadow-emerald-500/20 flex items-center space-x-2 transition-all hover:-translate-y-0.5">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        <span>WhatsApp (221 503-5902)</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <a href="https://www.instagram.com/regalitosmiel" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-2 rounded-xl">
+                        <i data-lucide="instagram" class="w-5 h-5"></i>
+                    </a>
+                    <button id="menu-btn" class="text-slate-700 hover:text-honey-600 focus:outline-none p-2 rounded-xl bg-honey-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 shadow-xl py-6 px-6">
+            <nav class="flex flex-col space-y-4 font-medium text-slate-700">
+                <a href="#inicio" class="mobile-link hover:text-honey-600 py-1 flex items-center space-x-2"><i data-lucide="home" class="w-4 h-4 text-honey-500"></i><span>Inicio</span></a>
+                <a href="#catalogo" class="mobile-link hover:text-honey-600 py-1 flex items-center space-x-2"><i data-lucide="grid" class="w-4 h-4 text-honey-500"></i><span>Catálogo de Productos</span></a>
+                <a href="#cotizador" class="mobile-link hover:text-honey-600 py-1 flex items-center space-x-2"><i data-lucide="calculator" class="w-4 h-4 text-honey-500"></i><span>Calculador de Presupuesto</span></a>
+                <a href="#proceso" class="mobile-link hover:text-honey-600 py-1 flex items-center space-x-2"><i data-lucide="list-ordered" class="w-4 h-4 text-honey-500"></i><span>¿Cómo Trabajar?</span></a>
+                <a href="#nosotros" class="mobile-link hover:text-honey-600 py-1 flex items-center space-x-2"><i data-lucide="heart" class="w-4 h-4 text-honey-500"></i><span>Sobre Regalitos Miel</span></a>
+                <a href="#contacto" class="mobile-link hover:text-honey-600 py-1 flex items-center space-x-2"><i data-lucide="mail" class="w-4 h-4 text-honey-500"></i><span>Contacto</span></a>
+                <div class="pt-2 border-t border-slate-100">
+                    <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20un%20producto%20personalizado." target="_blank" class="w-full bg-emerald-500 text-white py-3 rounded-2xl font-medium text-center flex items-center justify-center space-x-2 shadow-md">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>Escribir al 221 503-5902</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-28 honey-pattern relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-amber-100 text-honey-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-honey-300 shadow-sm">
+                        <span>🍯 Regalos Personalizados con Dulzura</span>
+                    </div>
+                    <h1 class="font-handwriting font-bold text-4xl sm:text-5xl lg:text-6xl text-slate-900 leading-tight">
+                        Transformamos tus ideas en <span class="text-transparent bg-clip-text bg-gradient-to-r from-honey-600 via-amber-500 to-honey-700">momentos inolvidables</span>
+                    </h1>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        En **Regalitos Miel** creamos detalles únicos. Impresión 3D (mates, llaveros, cortantes), papelería artesanal (agendas y cuadernos), sublimación en tazas y bolsas, y los souvenirs más lindos para tus eventos.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20un%20pedido%20personalizado." target="_blank" class="w-full sm:w-auto bg-gradient-to-r from-honey-500 to-amber-600 hover:from-honey-600 hover:to-amber-700 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-honey-500/30 transition-all hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                        <a href="#catalogo" class="w-full sm:w-auto bg-white hover:bg-amber-50 text-slate-800 font-bold px-8 py-4 rounded-2xl border border-honey-200 shadow-sm transition-all text-center flex items-center justify-center space-x-2">
+                            <i data-lucide="search" class="w-5 h-5 text-honey-600"></i>
+                            <span>Ver Catálogo</span>
+                        </a>
+                    </div>
+
+                    <!-- Contact highlights -->
+                    <div class="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-6 border-t border-honey-200/80">
+                        <a href="https://www.instagram.com/regalitosmiel" target="_blank" class="flex items-center space-x-2 text-slate-700 font-semibold text-sm hover:text-pink-600 transition-colors">
+                            <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-purple-500 to-pink-500 text-white flex items-center justify-center">
+                                <i data-lucide="instagram" class="w-4 h-4"></i>
+                            </div>
+                            <span>@regalitosmiel</span>
+                        </a>
+                        <a href="https://wa.me/5492215035902" target="_blank" class="flex items-center space-x-2 text-slate-700 font-semibold text-sm hover:text-emerald-600 transition-colors">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-500 text-white flex items-center justify-center">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                            </div>
+                            <span>221 503-5902</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Mascot Card -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto w-full max-w-md">
+                        <div class="bg-white p-8 rounded-3xl shadow-2xl border-2 border-honey-200 space-y-6 text-center relative overflow-hidden">
+                            <!-- Bee Mascot Illustration SVG -->
+                            <div class="w-32 h-32 mx-auto bg-amber-100 rounded-full flex items-center justify-center shadow-inner relative border-4 border-white">
+                                <span class="text-7xl animate-bounce">🐝</span>
+                            </div>
+                            <div>
+                                <h3 class="font-handwriting font-bold text-2xl text-slate-900">Regalitos Miel</h3>
+                                <p class="text-xs text-honey-600 font-semibold uppercase tracking-wider mt-1">Diseño & Personalizados</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-3 text-left">
+                                <div class="bg-amber-50 p-3 rounded-2xl border border-amber-100">
+                                    <span class="block text-xs font-bold text-honey-800">🖨️ Impresión 3D</span>
+                                    <span class="text-[11px] text-slate-500">Mates, llaveros, figuras</span>
+                                </div>
+                                <div class="bg-pink-50 p-3 rounded-2xl border border-pink-100">
+                                    <span class="block text-xs font-bold text-pink-800">📓 Papelería</span>
+                                    <span class="text-[11px] text-slate-500">Agendas & Cuadernos</span>
+                                </div>
+                                <div class="bg-blue-50 p-3 rounded-2xl border border-blue-100">
+                                    <span class="block text-xs font-bold text-blue-800">☕ Sublimación</span>
+                                    <span class="text-[11px] text-slate-500">Tazas, bolsitas, remeras</span>
+                                </div>
+                                <div class="bg-emerald-50 p-3 rounded-2xl border border-emerald-100">
+                                    <span class="block text-xs font-bold text-emerald-800">🎁 Souvenirs</span>
+                                    <span class="text-[11px] text-slate-500">Cumples & Eventos</span>
+                                </div>
+                            </div>
+
+                            <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20personalizado." target="_blank" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-2xl shadow-md flex items-center justify-center space-x-2 text-sm transition-all">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Consultar Disponibilidad</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Overview Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-honey-600 bg-amber-100 px-3 py-1 rounded-full">Nuestras Especialidades</span>
+                <h2 class="font-handwriting text-3xl sm:text-4xl font-bold text-slate-900">Todo lo que creamos para vos</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- 3D Printing -->
+                <div onclick="filterCategory('3d')" class="cursor-pointer bg-amber-50 hover:bg-amber-100/70 border border-amber-200 rounded-3xl p-6 transition-all hover:shadow-md text-center space-y-3">
+                    <div class="w-16 h-16 bg-white rounded-2xl mx-auto flex items-center justify-center text-3xl shadow-sm border border-amber-200">
+                        🖨️
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg">Impresión 3D</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Mates únicos, llaveros con nombres, cortantes para galletitas, macetitas y soportes.</p>
+                    <span class="inline-block text-xs font-bold text-honey-700">Ver Productos &rarr;</span>
+                </div>
+
+                <!-- Stationery -->
+                <div onclick="filterCategory('papeleria')" class="cursor-pointer bg-pink-50 hover:bg-pink-100/70 border border-pink-200 rounded-3xl p-6 transition-all hover:shadow-md text-center space-y-3">
+                    <div class="w-16 h-16 bg-white rounded-2xl mx-auto flex items-center justify-center text-3xl shadow-sm border border-pink-200">
+                        📓
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg">Papelería Creativa</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Agendas personalizadas 2026, cuadernos A5, planificadores y anotadores.</p>
+                    <span class="inline-block text-xs font-bold text-pink-700">Ver Productos &rarr;</span>
+                </div>
+
+                <!-- Sublimation -->
+                <div onclick="filterCategory('sublimacion')" class="cursor-pointer bg-blue-50 hover:bg-blue-100/70 border border-blue-200 rounded-3xl p-6 transition-all hover:shadow-md text-center space-y-3">
+                    <div class="w-16 h-16 bg-white rounded-2xl mx-auto flex items-center justify-center text-3xl shadow-sm border border-blue-200">
+                        ☕
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg">Sublimación</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Tazas mágicas, chopps, tote bags ecológicas, botellas y remeras personalizadas.</p>
+                    <span class="inline-block text-xs font-bold text-blue-700">Ver Productos &rarr;</span>
+                </div>
+
+                <!-- Souvenirs -->
+                <div onclick="filterCategory('souvenirs')" class="cursor-pointer bg-emerald-50 hover:bg-emerald-100/70 border border-emerald-200 rounded-3xl p-6 transition-all hover:shadow-md text-center space-y-3">
+                    <div class="w-16 h-16 bg-white rounded-2xl mx-auto flex items-center justify-center text-3xl shadow-sm border border-emerald-200">
+                        🎁
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg">Souvenirs & Fiestas</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">Kits para cumpleaños, bautismos, comuniones, baby shower y regalos corporativos.</p>
+                    <span class="inline-block text-xs font-bold text-emerald-700">Ver Productos &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Catalog Section -->
+    <section id="catalogo" class="py-20 bg-amber-50/50 border-y border-amber-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-honey-600 bg-amber-100 px-3 py-1 rounded-full">Catálogo Interactivo</span>
+                <h2 class="font-handwriting text-3xl sm:text-4xl font-bold text-slate-900">Elegí y Pedí Directo por WhatsApp</h2>
+                <p class="text-slate-600 text-sm">Buscá tu producto favorito y hacé clic en "Pedir por WhatsApp" para enviar la consulta configurada automáticamente.</p>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="max-w-3xl mx-auto mb-10 space-y-4">
+                <div class="relative">
+                    <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="search-input" oninput="searchProducts()" placeholder="Buscar por nombre (ej: Taza, Agenda, Mate, Souvenirs...)" class="w-full bg-white border border-amber-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm shadow-sm focus:outline-none focus:border-honey-500 transition-colors">
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-2" id="filter-buttons">
+                    <button onclick="filterCategory('todos')" class="filter-btn text-xs font-bold px-4 py-2 rounded-full bg-honey-500 text-white shadow-sm" data-category="todos">Todos</button>
+                    <button onclick="filterCategory('3d')" class="filter-btn text-xs font-bold px-4 py-2 rounded-full bg-white text-slate-700 border border-slate-200 hover:bg-amber-50" data-category="3d">🖨️ Impresión 3D</button>
+                    <button onclick="filterCategory('papeleria')" class="filter-btn text-xs font-bold px-4 py-2 rounded-full bg-white text-slate-700 border border-slate-200 hover:bg-amber-50" data-category="papeleria">📓 Papelería</button>
+                    <button onclick="filterCategory('sublimacion')" class="filter-btn text-xs font-bold px-4 py-2 rounded-full bg-white text-slate-700 border border-slate-200 hover:bg-amber-50" data-category="sublimacion">☕ Sublimación</button>
+                    <button onclick="filterCategory('souvenirs')" class="filter-btn text-xs font-bold px-4 py-2 rounded-full bg-white text-slate-700 border border-slate-200 hover:bg-amber-50" data-category="souvenirs">🎁 Souvenirs</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col justify-between" data-category="papeleria" data-title="agenda personalizada 2026">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-pink-100 text-pink-800 text-[11px] font-bold px-3 py-1 rounded-full">Papelería</span>
+                            <span class="text-xl">📓</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Agenda Personalizada 2026</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Tapa dura laminada con tu nombre o logo, anillado doble metálico, elástico sujetador y sobre para guardar papeles.</p>
+                        <div class="bg-amber-50 p-3 rounded-2xl text-xs text-amber-900 font-medium border border-amber-100">
+                            ✨ Muestra digital previa antes de imprimir.
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-100 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase font-bold">Consulte Precio</span>
+                            <span class="font-bold text-sm text-slate-800">100% a medida</span>
+                        </div>
+                        <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20la%20Agenda%20Personalizada%202026." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-md flex items-center space-x-1 transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col justify-between" data-category="3d" data-title="mates 3d personalizados con nombre">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-3 py-1 rounded-full">Impresión 3D</span>
+                            <span class="text-xl">🧉</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Mates 3D Personalizados</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Mate con interior térmico lavable e higiénico, exterior en PLA 3D con grabado de tu nombre, equipo o frase preferida.</p>
+                        <div class="bg-amber-50 p-3 rounded-2xl text-xs text-amber-900 font-medium border border-amber-100">
+                            ✨ Incluye bombilla de regalo.
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-100 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase font-bold">Consulte Precio</span>
+                            <span class="font-bold text-sm text-slate-800">Variedad de colores</span>
+                        </div>
+                        <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20los%20Mates%203D%20Personalizados." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-md flex items-center space-x-1 transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col justify-between" data-category="sublimacion" data-title="taza magica con fotos o frases">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-blue-100 text-blue-800 text-[11px] font-bold px-3 py-1 rounded-full">Sublimación</span>
+                            <span class="text-xl">☕</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Taza Mágica Térmica</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Taza cerámica negra que revela tu foto o frase al llenarla con agua o café caliente. ¡Súper novedoso para regalar!</p>
+                        <div class="bg-amber-50 p-3 rounded-2xl text-xs text-amber-900 font-medium border border-amber-100">
+                            ✨ Incluye cajita para regalo.
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-100 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase font-bold">Consulte Precio</span>
+                            <span class="font-bold text-sm text-slate-800">Apta microondas</span>
+                        </div>
+                        <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20la%20Taza%20Mágica%20Térmica." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-md flex items-center space-x-1 transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col justify-between" data-category="souvenirs" data-title="souvenirs llaveros 3d y bolsitas para cumples">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-3 py-1 rounded-full">Souvenirs</span>
+                            <span class="text-xl">🎁</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Kits Souvenirs para Cumples</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Combo de llaveritos 3D con el nombre del cumpleañero/a, bolsitas golosineras sublimadas y stickers temáticos.</p>
+                        <div class="bg-amber-50 p-3 rounded-2xl text-xs text-amber-900 font-medium border border-amber-100">
+                            ✨ Descuentos a partir de 15 unidades.
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-100 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase font-bold">Consulte Precio</span>
+                            <span class="font-bold text-sm text-slate-800">Cualquier personaje</span>
+                        </div>
+                        <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20Kits%20de%20Souvenirs." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-md flex items-center space-x-1 transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col justify-between" data-category="3d" data-title="cortantes para galletitas 3d reposteria">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-3 py-1 rounded-full">Impresión 3D</span>
+                            <span class="text-xl">🍪</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Cortantes 3D para Repostería</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Cortantes con marcador de relieve para masa de galletitas, fondant y porcelana fría. Formas personalizadas a pedido.</p>
+                        <div class="bg-amber-50 p-3 rounded-2xl text-xs text-amber-900 font-medium border border-amber-100">
+                            ✨ Plástico PLA no tóxico y biodegradable.
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-100 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase font-bold">Consulte Precio</span>
+                            <span class="font-bold text-sm text-slate-800">Diseños exclusivos</span>
+                        </div>
+                        <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20Cortantes%203D%20para%20Repostería." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-md flex items-center space-x-1 transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 hover:shadow-xl transition-all flex flex-col justify-between" data-category="sublimacion" data-title="bolsas tote bags ecologicas sublimadas">
+                    <div class="p-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-blue-100 text-blue-800 text-[11px] font-bold px-3 py-1 rounded-full">Sublimación</span>
+                            <span class="text-xl">🛍️</span>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Bolsas Tote Bags Sublimadas</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">Bolsas de lienzo de algodón o tropical mecánico sublimadas a todo color con ilustraciones, frases o tu marca.</p>
+                        <div class="bg-amber-50 p-3 rounded-2xl text-xs text-amber-900 font-medium border border-amber-100">
+                            ✨ Lavables y muy resistentes.
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 border-t border-slate-100 mt-2 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase font-bold">Consulte Precio</span>
+                            <span class="font-bold text-sm text-slate-800">Ideal para regalo</span>
+                        </div>
+                        <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20las%20Bolsas%20Tote%20Bags." target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl text-xs font-bold shadow-md flex items-center space-x-1 transition-all">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                            <span>Pedir por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Budget Calculator Section -->
+    <section id="cotizador" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-honey-600 bg-amber-100 px-3 py-1 rounded-full">Calculador Rápido</span>
+                    <h2 class="font-handwriting text-3xl sm:text-4xl font-bold text-slate-900">Simulá tu pedido en segundos 🧮</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Seleccioná el producto, la cantidad y las opciones de personalización que buscás. Generamos la consulta lista para enviar por WhatsApp.
+                    </p>
+                    
+                    <div class="p-5 bg-amber-50 rounded-2xl border border-amber-200 text-xs text-amber-900 space-y-2">
+                        <p class="font-bold">🍯 Ventajas de encargar en Regalitos Miel:</p>
+                        <ul class="space-y-1 list-disc list-inside text-slate-700">
+                            <li>Diseño y muestra digital previa sin costo extra.</li>
+                            <li>Atención súper personalizada por WhatsApp.</li>
+                            <li>Descuentos especiales por volumen (más de 10 unidades).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="bg-amber-50/60 p-6 sm:p-8 rounded-3xl border-2 border-honey-200 shadow-xl space-y-6">
+                        <h3 class="font-bold text-xl text-slate-900 flex items-center space-x-2">
+                            <span>🐝 Armá tu presupuesto</span>
+                        </h3>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Producto Deseado</label>
+                                <select id="calc-producto" onchange="calculateBudget()" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-honey-500">
+                                    <option value="Agenda Personalizada">Agenda Personalizada 2026</option>
+                                    <option value="Mate 3D Personalizado">Mate 3D con Grabado</option>
+                                    <option value="Taza Mágica Sublimada">Taza Mágica Térmica</option>
+                                    <option value="Souvenir Llavero 3D">Souvenirs Llaveros 3D (Pack)</option>
+                                    <option value="Tote Bag Sublimada">Bolsa Tote Bag Sublimada</option>
+                                    <option value="Cortante 3D">Cortantes 3D para Repostería</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Cantidad Aproximada</label>
+                                <select id="calc-cantidad" onchange="calculateBudget()" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-honey-500">
+                                    <option value="1 a 3 unidades">1 a 3 unidades (Individual)</option>
+                                    <option value="5 a 10 unidades">5 a 10 unidades (Promo)</option>
+                                    <option value="15 a 30 unidades">15 a 30 unidades (Eventos)</option>
+                                    <option value="Más de 50 unidades">Más de 50 unidades (Mayorista)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">Detalles Extra</label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                                <label class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50">
+                                    <input type="checkbox" id="calc-caja" onchange="calculateBudget()" class="rounded text-honey-500 focus:ring-honey-400">
+                                    <span>Incluir empaque de regalo especial 🎁</span>
+                                </label>
+                                <label class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-amber-50">
+                                    <input type="checkbox" id="calc-urgente" onchange="calculateBudget()" class="rounded text-honey-500 focus:ring-honey-400">
+                                    <span>Pedido con urgencia (menos de 72hs) ⚡</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Estimate result box -->
+                        <div class="bg-white p-5 rounded-2xl border border-honey-300 shadow-inner flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div>
+                                <span class="text-xs text-slate-500 block">Resumen del pedido estimado:</span>
+                                <span id="calc-resumen" class="font-bold text-slate-900 text-sm">Agenda Personalizada — 1 a 3 unidades</span>
+                            </div>
+                            <button onclick="sendBudgetWhatsApp()" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl text-xs shadow-md flex items-center justify-center space-x-2 transition-all">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Enviar Consulta al 221 503-5902</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Process Section -->
+    <section id="proceso" class="py-20 bg-amber-50/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-honey-600 bg-amber-100 px-3 py-1 rounded-full">Paso a Paso</span>
+                <h2 class="font-handwriting text-3xl sm:text-4xl font-bold text-slate-900">¿Cómo encargás tu producto personalizado?</h2>
+                <p class="text-slate-600 text-sm">Crear algo único con nosotros es facilísimo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative text-center space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-honey-800 rounded-2xl mx-auto flex items-center justify-center font-bold text-xl border border-amber-300">
+                        1
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Contactanos</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Escribinos por WhatsApp al **221 503-5902** o mandanos mensaje directo en Instagram **@regalitosmiel**.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative text-center space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-honey-800 rounded-2xl mx-auto flex items-center justify-center font-bold text-xl border border-amber-300">
+                        2
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Definí tu Diseño</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Elegí la temática, los nombres, colores o enviamos tu logo. Te enviamos una muestra previa digital.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative text-center space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-honey-800 rounded-2xl mx-auto flex items-center justify-center font-bold text-xl border border-amber-300">
+                        3
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Producción</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Una vez señado, ponemos en marcha nuestras impresoras 3D, prensas de sublimación o taller de papelería.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm relative text-center space-y-3">
+                    <div class="w-12 h-12 bg-amber-100 text-honey-800 rounded-2xl mx-auto flex items-center justify-center font-bold text-xl border border-amber-300">
+                        4
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-base">Entrega o Envío</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">Coordinamos el retiro en nuestro taller o acordamos la entrega/envío hasta tu hogar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & FAQ Section -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Direct Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-honey-600 bg-amber-100 px-3 py-1 rounded-full">Contactanos</span>
+                    <h2 class="font-handwriting text-3xl sm:text-4xl font-bold text-slate-900">¡Estamos para asesorarte! 🐝</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Hacé tu consulta sin compromiso. Te respondemos al instante para ayudarte a elegir el mejor regalito.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <a href="https://wa.me/5492215035902" target="_blank" class="flex items-center space-x-4 p-4 rounded-2xl bg-emerald-50 hover:bg-emerald-100/70 border border-emerald-200 transition-colors">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center text-xl shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 font-bold uppercase block">WhatsApp Directo</span>
+                                <span class="font-bold text-slate-900 text-base">221 503-5902</span>
+                            </div>
+                        </a>
+
+                        <a href="https://www.instagram.com/regalitosmiel" target="_blank" class="flex items-center space-x-4 p-4 rounded-2xl bg-pink-50 hover:bg-pink-100/70 border border-pink-200 transition-colors">
+                            <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-500 to-pink-500 text-white flex items-center justify-center text-xl shrink-0">
+                                <i data-lucide="instagram" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 font-bold uppercase block">Instagram Oficial</span>
+                                <span class="font-bold text-slate-900 text-base">@regalitosmiel</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="lg:col-span-7 space-y-4">
+                    <h3 class="font-handwriting text-2xl font-bold text-slate-900 mb-4">Preguntas Frecuentes</h3>
+
+                    <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200 space-y-2">
+                        <h4 class="font-bold text-slate-900 text-sm flex items-center justify-between">
+                            <span>¿Con cuánta anticipación debo hacer mi pedido?</span>
+                            <span class="text-honey-600">❓</span>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Para productos individuales (como un mate o agenda) recomendamos de 3 a 5 días de anticipación. Para souvenirs o eventos recomendamos de 10 a 15 días.
+                        </p>
+                    </div>
+
+                    <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200 space-y-2">
+                        <h4 class="font-bold text-slate-900 text-sm flex items-center justify-between">
+                            <span>¿Puedo ver cómo queda el diseño antes de imprimir?</span>
+                            <span class="text-honey-600">❓</span>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            ¡Sí, totalmente! Siempre te enviamos una muestra o boceto digital previo por WhatsApp para que nos des el visto bueno antes de confeccionar el producto.
+                        </p>
+                    </div>
+
+                    <div class="bg-amber-50/60 p-5 rounded-2xl border border-amber-200 space-y-2">
+                        <h4 class="font-bold text-slate-900 text-sm flex items-center justify-between">
+                            <span>¿Hacen envíos?</span>
+                            <span class="text-honey-600">❓</span>
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Coordinamos entregas locales y envíos según tu conveniencia. Al escribirnos por WhatsApp nos indicás tu localidad y coordinamos la mejor opción.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-900 flex items-center justify-center text-xl font-bold">
+                            🐝
+                        </div>
+                        <span class="font-handwriting font-bold text-2xl tracking-tight text-white">Regalitos Miel</span>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Taller de regalos personalizados, impresión 3D, papelería artesanal, sublimación y souvenirs hechos con amor y dedicación.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-honey-400 uppercase tracking-wider">Contacto Directo</h4>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+                            <a href="https://wa.me/5492215035902" target="_blank" class="hover:text-white transition-colors">WhatsApp: 221 503-5902</a>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i>
+                            <a href="https://www.instagram.com/regalitosmiel" target="_blank" class="hover:text-white transition-colors">Instagram: @regalitosmiel</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm mb-4 text-honey-400 uppercase tracking-wider">Categorías</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li>🖨️ Impresión 3D (Mates, llaveros, cortantes)</li>
+                        <li>📓 Papelería (Agendas 2026, cuadernos A5)</li>
+                        <li>☕ Sublimación (Tazas mágicas, tote bags)</li>
+                        <li>🎁 Souvenirs para Cumpleaños y Eventos</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 Regalitos Miel. Todos los derechos reservados.</p>
+                <p class="mt-2 sm:mt-0">Hecho especialmente para regalar momentos mágicos 🍯</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5492215035902?text=¡Hola!%20Quiero%20consultar%20por%20un%20producto%20personalizado." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 group" aria-label="WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <span class="absolute right-full mr-3 bg-white text-slate-800 text-xs font-bold px-3 py-1.5 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+            ¡Hacé tu pedido al 221 503-5902!
+        </span>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Category Filter Function
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.product-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    btn.className = 'filter-btn text-xs font-bold px-4 py-2 rounded-full bg-honey-500 text-white shadow-sm';
+                } else {
+                    btn.className = 'filter-btn text-xs font-bold px-4 py-2 rounded-full bg-white text-slate-700 border border-slate-200 hover:bg-amber-50';
+                }
+            });
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category');
+                if (category === 'todos' || cardCat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Live Search Function
+        function searchProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title') || '';
+                if (title.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Budget Calculator Logic
+        function calculateBudget() {
+            const producto = document.getElementById('calc-producto').value;
+            const cantidad = document.getElementById('calc-cantidad').value;
+            const caja = document.getElementById('calc-caja').checked;
+            const urgente = document.getElementById('calc-urgente').checked;
+
+            let resumen = `${producto} — ${cantidad}`;
+            if (caja) resumen += ' + Cajas de Regalo';
+            if (urgente) resumen += ' (Express ⚡)';
+
+            document.getElementById('calc-resumen').innerText = resumen;
+        }
+
+        function sendBudgetWhatsApp() {
+            const producto = document.getElementById('calc-producto').value;
+            const cantidad = document.getElementById('calc-cantidad').value;
+            const caja = document.getElementById('calc-caja').checked ? 'Sí' : 'No';
+            const urgente = document.getElementById('calc-urgente').checked ? 'Sí (Urgente)' : 'No';
+
+            const msg = `¡Hola Regalitos Miel! 🍯 Quisiera solicitar un presupuesto para:\n- *Producto:* ${producto}\n- *Cantidad:* ${cantidad}\n- *Empaque de regalo:* ${caja}\n- *Urgencia:* ${urgente}`;
+            
+            const encoded = encodeURIComponent(msg);
+            window.open(`https://wa.me/5492215035902?text=${encoded}`, '_blank');
+        }
+
+        // Initialize default calculation
+        calculateBudget();
+    </script>
+</body>
+</html>
